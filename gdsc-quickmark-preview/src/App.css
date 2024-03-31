@@ -1,51 +1,81 @@
-/* src/App.css */
+/* MarkdownEditorToolbar.css */
+
+.toolbar {
+  display:flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+ }
+ 
+ .toolbar button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+ }
+ 
+ .toolbar button:hover {
+  background-color: #45a049;
+ }
+ 
+/* MarkdownEditorToolbar.css */
+
 .markdown-container {
   display: flex;
-  background-color: #e00353;
-  height: 695px;
-}
-
-.markdown-editor {
-  flex: 2;
-  border-right: 5px solid #ccc;
-  padding:20px;
-  color:#ccc;
-  margin: 5px;
-}
-
-.markdown-editor textarea {
-  width: 100%;
-  height: 90%;
-}
-
-.markdown-preview {
-  flex: 2;
+  flex-direction: row; /* Aligns items horizontally */
+  justify-content: space-between; /* Pushes the preview container to the right */
+  align-items: flex-start; /* Aligns items to the top */
   padding: 20px;
-  overflow: auto;
-  color:#ccc;
-}
-
-@media (max-width: 767px) {
+  background-color: #f5f5f5;
+  height: 600px;
+ }
+ 
+ .markdown-editor, .markdown-preview {
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 20px;
+  height: 600px;
+ }
+ 
+ .markdown-editor textarea {
+  width: 100%;
+  height: 540px;
+  padding: 10px;
+  box-sizing: border-box;
+ }
+ 
+ .markdown-preview {
+  margin-top: 20px;
+ }
+ 
+ /* Responsive design for smaller screens */
+ @media (max-width: 800px) {
   .markdown-container {
-    flex-direction: column;
+     flex-direction: column;
   }
-
-  .markdown-editor {
-    border-right: none;
-    border-bottom: 1px solid #ccc;
+  .toolbar {
+     flex-direction: column;
+     align-items: center;
   }
-}
-
-.head{
-  color: #020436;
-  font-size: 10px;
-  text-decoration:underline;
-  text-decoration-color:#020436;
-  text-decoration-thickness: 4px;
-}
-
-.logo {
-  height: 50px;
-  width: 50px;
-  margin-right: 5px;
+ }
+ 
+ .logo {
+  height: 100px;
+  width: 100px;
+  margin-right: 10px;
+  margin-top: 20px;
 }
